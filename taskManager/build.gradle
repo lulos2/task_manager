@@ -1,0 +1,55 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.0.6'
+	id 'io.spring.dependency-management' version '1.1.0'
+	id 'org.graalvm.buildtools.native' version '0.9.20'
+}
+
+/*group = 'com.taskAplication'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+version:'1.16'
+services:
+  db:
+    image: 'postgres:alpine'
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'platzi'
+      POSTGRES_DB: 'platzi-market'
+    volumes:
+      - db-data:/var/lib/postgresql/data/
+    #-./db:/docker-entrypoint-initdb.d
+
+  pgadmin:
+    image: dpage/pgadmin4:4.22
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_LISTEN_PORT: 80
+    ports:
+      - '64374:80'
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    depends_on:
+      - db
+
+ */
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	/*implementation 'org.springframework.data:spring-data-jpa'*/
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testImplementation ('org.springframework.boot:spring-boot-starter-test') {
+		exclude(group: 'org.junit.vintage',module: 'junit-vintage-engine')
+	}
+	/*runtimeOnly'org.postgresql:postgresql'*/
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
