@@ -19,8 +19,17 @@ public class Customer {
     @Column(name = "apellido")
     private String apellido;
 
+    @ElementCollection
+    @CollectionTable( name = "telefono", joinColumns = @JoinColumn(name = "id_cliente") )
+    @Column( name = "telefono")
+    public List<String> getTelefonos;
 
 
+    public Customer(Long idCustomer, String name, String apellido) {
+        this.idCustomer = idCustomer;
+        this.name = name;
+        this.apellido = apellido;
+    }
 
     public Long getIdCustomer() {
         return idCustomer;
