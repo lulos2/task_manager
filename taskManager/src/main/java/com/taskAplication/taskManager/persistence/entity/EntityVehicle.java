@@ -2,11 +2,9 @@ package com.taskAplication.taskManager.persistence.entity;
 
 import jakarta.persistence.*;
 
-import java.time.LocalDateTime;
-
 @Entity
 @Table( name = "vehiculo")
-public class Vehicle {
+public class EntityVehicle {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,18 +13,34 @@ public class Vehicle {
 
     @ManyToOne
     @JoinColumn(name = "idCustomer", insertable = false, updatable = false)
-    private Customer customer;
+    private EntityCustomer entityCustomer;
 
     @Column( name = "marca")
-    private String brand;
+    private String marca;
 
     @Column( name = "modelo")
-    private String model;
+    private String modelo;
 
     @Column( name = "anio")
-    private Integer year;
+    private Integer anio;
 
+    public Long getId() {
+        return id;
+    }
 
+    public EntityCustomer getEntityCustomer() {
+        return entityCustomer;
+    }
 
+    public String getMarca() {
+        return marca;
+    }
 
+    public String getModelo() {
+        return modelo;
+    }
+
+    public Integer getAnio() {
+        return anio;
+    }
 }

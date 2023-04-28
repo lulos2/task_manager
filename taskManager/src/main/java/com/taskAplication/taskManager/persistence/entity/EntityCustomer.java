@@ -6,15 +6,15 @@ import java.util.List;
 
 @Entity
 @Table(name = "cliente")
-public class Customer {
+public class EntityCustomer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_cliente")
-    private Long idCustomer;
+    private Long idCliente;
 
     @Column(name = "nombre")
-    private String name;
+    private String nombre;
 
     @Column(name = "apellido")
     private String apellido;
@@ -25,18 +25,18 @@ public class Customer {
     public List<String> getTelefonos;
 
 
-    public Customer(Long idCustomer, String name, String apellido) {
-        this.idCustomer = idCustomer;
-        this.name = name;
+    public EntityCustomer(Long idCliente, String nombre, String apellido) {
+        this.idCliente = idCliente;
+        this.nombre = nombre;
         this.apellido = apellido;
     }
 
-    public Long getIdCustomer() {
-        return idCustomer;
+    public Long getIdCliente() {
+        return idCliente;
     }
 
-    public String getName() {
-        return name;
+    public String getNombre() {
+        return nombre;
     }
 
     public String getApellido() {

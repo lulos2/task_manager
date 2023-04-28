@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/springProyect.iml" filepath="$PROJECT_DIR$/.idea/springProyect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/taskManager.main.iml" filepath="$PROJECT_DIR$/.idea/modules/taskManager.main.iml" />
     </modules>
   </component>
 </project>

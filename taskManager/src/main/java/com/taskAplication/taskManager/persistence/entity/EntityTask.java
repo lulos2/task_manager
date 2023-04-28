@@ -3,11 +3,10 @@ package com.taskAplication.taskManager.persistence.entity;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Entity
 @Table (name = "tarea")
-public class Task {
+public class EntityTask {
 
 
     @Id
@@ -16,15 +15,15 @@ public class Task {
     private Long idTask;
 
     @Column( name = "nombre")
-    private String taskName;
+    private String nombre;
 
     @ManyToOne
     @JoinColumn( name = "idVehicle", insertable = false, updatable = false)
-    private Vehicle vehicle;
+    private EntityVehicle entityVehicle;
 
     @ManyToOne
     @JoinColumn( name = "idCustomer", insertable = false, updatable = false)
-    private Customer customer;
+    private EntityCustomer entityCustomer;
 
     @Column( name = "precio")
     private Integer price;
@@ -32,15 +31,18 @@ public class Task {
     @Column( name = "fecha_inicio")
     private LocalDateTime initDate;
 
+    @Column( name = "fecha_fin")
+    private LocalDateTime finishDate;
+
     @Column( name = "is_done")
     private boolean isDone;
 
-    public Vehicle getVehicle() {
-        return vehicle;
+    public EntityVehicle getVehicle() {
+        return entityVehicle;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public EntityCustomer getCustomer() {
+        return entityCustomer;
     }
 
     public void setPrice(Integer price) {
