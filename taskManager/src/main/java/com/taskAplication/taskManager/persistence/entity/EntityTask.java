@@ -15,6 +15,9 @@ public class Task {
     @Column( name = "id_tarea")
     private Long idTask;
 
+    @Column( name = "nombre")
+    private String taskName;
+
     @ManyToOne
     @JoinColumn( name = "idVehicle", insertable = false, updatable = false)
     private Vehicle vehicle;
